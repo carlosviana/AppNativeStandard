@@ -104,3 +104,25 @@ Altere o conteúdo do aquivo _.eslintrc.json_ para o conteúdo:
     }
 }
 ```
+
+##Configurando o **babel**
+
+Se não possuir, crie um arquivo _.babelrc_ na raiz do projeto
+
+Informe o seguinte conteúdo:
+
+```json
+{
+    "presets": ["module:metro-react-native-babel-preset"],
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "cwd": "babelrc",
+                "root": ["./src"],
+                "extensions": [".js", ".ios.js", ".android.js"]
+            }
+        ]
+    ]
+}
+```
