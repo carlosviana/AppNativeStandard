@@ -1,0 +1,3 @@
+rootProject.name = 'AppNativeStandard'
+
+include ':app'
