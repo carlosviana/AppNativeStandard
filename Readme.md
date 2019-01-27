@@ -109,6 +109,18 @@ Altere o conteúdo do aquivo _.eslintrc.json_ para o conteúdo:
 
 Se não possuir, crie um arquivo _.babelrc_ na raiz do projeto
 
+Instale o plugin do _module_resolver_
+
+```console
+yarn add babel-plugin-module-resolver -D
+```
+
+e
+
+```console
+yarn add -D eslint-plugin-import eslint-import-resolver-babel-module
+```
+
 Informe o seguinte conteúdo:
 
 ```json
@@ -125,4 +137,38 @@ Informe o seguinte conteúdo:
         ]
     ]
 }
+```
+
+## Instalando e configurando o **Reactotron**
+
+Instale o reactotron
+
+Importe a biblioteca para configura o projeto com o Reactotron
+
+```console
+yarn add reactotron-react-native
+```
+
+Crie uma pasta _/src/Config_
+
+Crie o arquivo de configuração do Reactotron - _ReactotronConfig.js_
+
+```javascript
+import Reactotron from "reactotron-react-native";
+
+if (__DEV__) {
+    const tron = Reactotron.configure({ host: "192.168.0.110" })
+        .useReactNative()
+        .connect();
+
+    tron.clear();
+
+    console.tron = tron;
+}
+```
+
+Importe a configuração do Reactotron no _./src/index.js_
+
+```javascript
+import "./config/ReactotronConfig";
 ```
