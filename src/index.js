@@ -1,14 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
+import { Provider } from "react-redux";
 import { View, Text } from "react-native";
 
 import "./config/ReactotronConfig";
 
-export default class App extends Component {
-    render() {
-        return (
-            <View>
-                <Text>Modelo básico</Text>
-            </View>
-        );
-    }
-}
+import store from "./store";
+
+const App = () => (
+    <Provider store={store}>
+        <View>
+            <Text>Modelo básico</Text>
+        </View>
+    </Provider>
+);
+
+export default App;
